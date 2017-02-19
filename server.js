@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 //Conexion con la base de datos
-mongoose.connect('mongodb://localhost:27017/angular-todo');
+mongoose.connect('mongodb://david7art:07011999@ds056979.mlab.com:56979/angulartodo');
 
 app.configure(function(){
 	//lOCALIZACION DE LOS FICHEROS ESTATICOS
@@ -65,6 +65,6 @@ app.get('*',function(req,res){
 	res.sendfile('/public/index.html');
 })
 
-app.listen(8080,function(){
+app.listen(process.env.PORT || 8080,function(){
 	console.log("App Escuchando en el puerto 8080")
 })
